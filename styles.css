@@ -1,7 +1,17 @@
+.game-board {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+
 .game-grid {
     width: 500px;
     height: 500px;
     margin: 15px;
+    padding: 15px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -17,4 +27,15 @@
     height: 150px;
     background-color: #eaafec;
     border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.square-text {
+    text-align: center;
+    font-size: 70px;
 }
