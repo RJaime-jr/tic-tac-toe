@@ -22,6 +22,10 @@ body {
 
 }
 
+.display-player {
+    -webkit-text-stroke: 2px black;
+}
+
 
 .game-grid {
     width: 500px;
@@ -54,6 +58,7 @@ body {
 .square-text {
     text-align: center;
     font-size: 100px;
+    -webkit-text-stroke: 2px #fcefe8;
 
 }
 

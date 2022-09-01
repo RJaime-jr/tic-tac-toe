@@ -11,7 +11,7 @@ const grid = document.createElement('div');
 grid.classList.add('game-grid');
 
 
-const sayHello = (e) => {
+const claimSquare = (e) => {
     e.target.classList.remove('basic');
     e.target.classList.add('square-text');
     if (playerTurn) {
@@ -27,6 +27,7 @@ const sayHello = (e) => {
     toggleBool();
     console.log(playerTurn);
     displayPlayer();
+    e.target.onclick = null;
 
     //console.log("hello!");
 }
@@ -34,9 +35,16 @@ const sayHello = (e) => {
 function displayPlayer() {
     display.innerText = "";
     if (playerTurn) {
+        display.style.color = "#F06C9B";
         display.innerText = `${player1.name}'s turn mark your ${player1.mark}`;
+
+
     }
-    else { display.innerText = `${player2.name}'s turn mark your ${player2.mark}`; }
+    else {
+        display.style.color = "#F9B9B7";
+        display.innerText = `${player2.name}'s turn mark your ${player2.mark}`;
+
+    }
 
 }
 
@@ -48,7 +56,7 @@ function createSquare() {
 
     grid.appendChild(square);
     square.appendChild(text);
-    text.onclick = sayHello;
+    text.onclick = claimSquare;
 }
 
 
@@ -95,15 +103,15 @@ return{
 
 
 
+const allSquares = document.querySelectorAll('.squares');
+const showBoard = (e) => {
 
-const logPlayerName = (e) => {
-
-    console.log({ player1, player2 });
+    console.log({ allSquares });
 
 
 }
 
-testButton.onclick = logPlayerName;
+testButton.onclick = showBoard;
 
 
 
