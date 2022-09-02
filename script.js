@@ -1,14 +1,35 @@
+// DOM 
+
 const gameBoard = document.getElementById('gameBoard');
 const testButton = document.getElementById('test_but');
 const display = document.getElementById('display_player');
 let playerTurn = true;
+const grid = document.createElement('div');
+grid.classList.add('game-grid');
+gameBoard.appendChild(grid);
+
+let squarePoints = ["", "", "", "", "", "", "", "", "",];
+
+
+
+
+
+
+const player = (name, mark) => {
+    return { name, mark }
+}
+
+
+const player1 = player('player1', 'X');
+const player2 = player('player2', 'O');
+displayPlayer();
+
+
 
 function toggleBool() {
     playerTurn = !playerTurn;
 }
 
-const grid = document.createElement('div');
-grid.classList.add('game-grid');
 
 
 const claimSquare = (e) => {
@@ -23,13 +44,11 @@ const claimSquare = (e) => {
         e.target.innerText = player2.mark;
         e.target.parentNode.classList.add('player2');
     }
-
+    console.log(e.target.parentNode.value);
     toggleBool();
     console.log(playerTurn);
     displayPlayer();
     e.target.onclick = null;
-
-    //console.log("hello!");
 }
 
 function displayPlayer() {
@@ -59,59 +78,31 @@ function createSquare() {
     text.onclick = claimSquare;
 }
 
-
-
-gameBoard.appendChild(grid);
-
 for (let i = 0; i < 9; i++) {
     createSquare();
 
 }
 
-const player = (name, mark) => {
-    return { name, mark }
-}
-
-
-const player1 = player('player1', 'X');
-const player2 = player('player2', 'O');
-displayPlayer();
-
-
-
-
-/*
-const game = (() => {
-    const a = player1;
-    const b = player2;
-
-    const swap = (a, b) => { let c = b; b = a; a = c; return { a, b }; };
-
-
-
-
-return{
-    activePlayer
-}
-;
-})();
-*/
-
-
-
-
-
-
-
 const allSquares = document.querySelectorAll('.squares');
-const showBoard = (e) => {
 
+
+
+
+
+
+
+
+
+
+
+const showBoard = (e) => {
     console.log({ allSquares });
+
+
 
 
 }
 
 testButton.onclick = showBoard;
-
 
 
