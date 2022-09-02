@@ -68,6 +68,22 @@ body {
 
 }
 
+.player1win {
+    color: #F06C9B;
+    -webkit-text-stroke: 2px black;
+
+
+}
+
+.player2win {
+    color: #F9B9B7;
+    -webkit-text-stroke: 2px black;
+}
+
+.hide {
+    display: none;
+}
+
 .player1 {
     background-color: #F06C9B;
 
