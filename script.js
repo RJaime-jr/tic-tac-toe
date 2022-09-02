@@ -160,7 +160,7 @@ const disableBoard = () => {
 }
 
 
-
+/*
 
 const showBoard = (e) => {
 
@@ -174,3 +174,4 @@ const showBoard = (e) => {
 testButton.onclick = showBoard;
 
 
+*/
